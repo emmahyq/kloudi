@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>kloudi</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="relax with music and airplane ambience as you close your eyes and pretend the last year never happened.">
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+		<script src="https://kit.fontawesome.com/89e5948346.js" crossorigin="anonymous"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+<body>
+
+    <embed class="music-embed" src="audio.html" style="width: 90%; height: 70vh; box-shadow: 5px 5px 8px 8px rgb(0, 0, 0, 0.1)">
+
+
+
+    <!--
+    <div class="wrapper">
+        <div class="overlay-background"></div>
+    </div> -->
+<h1 class="icons no-select">
+    <a class="links" id="night-btn"><i class="fas fa-moon"></i></a>
+    <a class="links" id="dark-btn"><i class="fas fa-bed"></i></a>
+    <a class="links" id="airplane-btn"><i class="fas fa-plane"></i></a>
+    <a class="links music-btn"><i class="fas fa-compact-disc"></i></a>
+</h1>
+
+<div class="wrapper">
+    <div id="dark-div" class="overlay-dark" style="display: none"></div>
+</div> 
+
+<script>
+
+    const musicButton = document.querySelector('.music-btn');
+    const music = document.querySelector('.music-embed');
+
+    musicButton.addEventListener('click', () => {
+    music.classList.toggle('-open');
+    })
+
+</script>
+
+
+    <div>
+    <div class="wrapper">
+        <div class="overlay-div">
+            <img class="overlay-img" src="windows342.png">
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div id="night-div" class="overlay-night" style="display: none"></div>
+    </div> 
+
+    <div class="wrapper">
+        <div class="sliding-background"></div>
+    </div> 
+
+</div>
+
+<audio src="airplane.mp3" id="airplane-sound" preload="auto" loop>
+  Your browser does not support the HTML5 audio element.
+  </audio>
+
+<script>
+
+    // take away display:none
+
+    $(document).ready(function(){
+    $("#night-btn").click(function(){
+        $("#night-div").toggle();
+    });
+
+    $("#dark-btn").click(function(){
+        $("#dark-div").toggle();
+    });
+        
+    });
+
+</script>
+
+<script>
+        // play music toggle
+        $(document).ready(function() {
+  var playing = false;
+  var airplane = document.getElementById("airplane-sound");
+  airplane.volume = 0.9;
+
+  $('#airplane-btn').click(function() {
+      $(this).toggleClass("down");
+
+      if (playing == false) {
+          document.getElementById('airplane-sound').play();
+          playing = true;
+
+      } else {
+        document.getElementById('airplane-sound').pause();
+        playing = false;
+      }
+
+  });
+});
+
+</script>	
+		
+		
+		
+	</body>
+</html>

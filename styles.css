@@ -1,0 +1,146 @@
+body,h1, h2, h3, h4, h5, p, a, form, textarea {font-family: "Inter", sans-serif; font-weight: 300}
+
+div.auto{-webkit-hyphens: manual;-ms-hyphens: manual;hyphens: manual;}
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+img.emoji {
+    width: 1.1em;
+	height: 1.1em;
+	margin: 0.05em 0.1em;
+	vertical-align: -0.1em;
+    pointer-events: none; 
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: rgb(94, 83, 192);
+}
+
+::selection {
+  color: white;
+  background: rgb(94, 83, 192);
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.sliding-background {
+  background: url("clouds823smaller.jpeg") repeat-x;
+  top: 110px;
+  background-size: contain;
+  min-height: 80%;
+  min-width: 16000px;
+  position: fixed;
+  z-index: -1;
+  animation: slide 100s linear infinite;
+}
+
+.overlay-night {
+    background: url("night300smaller.jpeg") repeat-x;
+    top: 110px;
+    height: 100vh;
+    min-width: 13000px;
+    position: fixed;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.overlay-dark {
+    background: url("night300.jpeg") repeat-x;
+    height: 100vh;
+    min-width: 13000px;
+    position: fixed;
+    z-index: 6;
+    opacity: 0.7;
+}
+
+/**
+.overlay-background {
+    background: url("windows1131smaller.png") repeat-x;
+    max-height: 100vh;
+    width: 13000px;
+    position: fixed;
+    z-index: 1;
+} **/
+
+h1, h2, h3, h4, h5, h6, p {
+    position: absolute;
+    left: 25px;
+    z-index: 200;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+
+.icons {
+    letter-spacing: 0.2em;
+    color: #4874ad;
+}
+
+.links {
+    color: inherit;
+    text-decoration: none;
+}
+
+.links:hover {
+    color:rgb(114, 104, 211);
+    transition: 200ms all;
+}
+
+.overlay-div {
+    height: 100vh;
+    width: auto;
+    left: -150px;
+    position: fixed;
+    z-index: 2;
+}
+
+.overlay-img {
+    max-height: 100%;
+    width: auto;
+}
+
+@keyframes slide {
+  0% {
+    left: 0px;
+  }
+  100% {
+    transform: translate(-90%,0);
+  }
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.music-embed {
+    position: fixed;
+    z-index: -10;
+    border-radius: 20px;
+    top: 100px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    opacity: 0;
+}
+
+.music-embed.-open {
+    opacity: 1;
+    transition: 50ms all;
+    z-index: 10;
+}
+
+.music-btn {}
